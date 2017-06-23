@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/***********************************************************/
+// Initializes teams, this can possibly be put elsewhere.
+/***********************************************************/
+
 public class WorldTracker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 		var gameManager = GameObject.Find ("GameManager").GetComponent<gameManager>();
 		for (int i = 0; i < gameManager.teams.Count; i++) {
-			gameManager.teams [i].GetComponent<Team> ().spawnEnemies ();
+			gameManager.teams [i].GetComponent<Team> ().Initialize ();
 		}
 	}
 	
